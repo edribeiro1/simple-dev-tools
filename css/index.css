@@ -1,0 +1,144 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #eee;
+    align-items: center;
+    width: 100%;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+button {
+    font-family: 'Roboto', sans-serif !important;
+    cursor: pointer;
+}
+
+.button-card {
+    border: 0;
+    font-size: 2em;
+    font-weight: 400;
+    width: 100%;
+    background-color: #003e75;
+    color: white;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.button-card:hover {
+    background-color: #002b4d;
+}
+
+.feed {
+    min-height: 100vh;
+    max-width: 35em;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #3f3f3f; */
+    align-items: center;
+    width: 100%;
+}
+
+.feed-2 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    /* background-color: #3f3f3f; */
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 0px 5px 0px #2196F3;
+    background-color: #2196F3;
+    max-width: 500px;
+    width: 100%;
+    min-height: 10em;
+    margin: 1em 0px;
+    border-radius: 10px;
+    padding: 2em;
+    color: white;
+}
+
+.card-body {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    min-height: 18em;
+}
+
+iframe {
+    border-radius: 10px;
+}
+
+.a_link {
+    background-color: #2196F3;
+    box-shadow: 0px 0px 5px 0px #2196F3;
+    border-radius: 4px;
+    margin: 10px;
+    padding: 20px;
+    width: 40%;
+    text-align: center;
+    font-size: 3em;
+    text-decoration: unset;
+    color: white;
+}
+
+fieldset {
+    border-color: white;
+    margin-top: 20px;
+    border-style: groove;
+    border-image: initial;
+    border-width: 2px;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+legend {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.titulo-card {
+    font-size: 3em;
+    font-weight: 500;
+}
+
+.input-card {
+    border: 0;
+    margin-top: 20px;
+    padding: 10px;
+    width: -webkit-fill-available;
+    font-size: 1.5em;
+    border-radius: 4px;
+}
+
+.input-card:disabled {
+    background-color: #e3e3e3;
+    color: #001b33;
+    cursor: text;
+}
+
+.input-copy {
+    display: block;
+    position: relative;
+}
+
+#btn-copy {
+    position: absolute;
+    top: 29px;
+    right: 1px;
+    border: 0;
+    background: unset;
+}
+
+.img-copy {
+    height: 30px;
+    filter: drop-shadow(0px 0px 5px #242424);
+}
+
+.img-copy:hover {
+    filter: invert(1) drop-shadow(0px 0px 5px #242424);
+}

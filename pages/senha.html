@@ -16,35 +16,18 @@
         <section class="feed-2">
             <div class="card">
                 <div class="card-body">
-                    <span class="titulo-card">Gerador de CNPJ</span>
-                    <fieldset>
-                        <legend>Com Pontuação?</legend>
-                        <div>
-                            <input type="radio" id="sim" name="pontuacao" value="sim" checked/>
-                            <label for="sim">Sim</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="nao" name="pontuacao" value="nao" />
-                            <label for="nao">Não</label>
-                        </div>
-                    </fieldset>
-                    <button id="gerar_cnpj" class="button-card">Gerar</button>
+                    <span class="titulo-card">Gerador de senha</span>
+                    <input type="text" id="key_senha_1" class="input-card" placeholder="Digite a chave" />
+                    <input type="text" id="key_senha_2" class="input-card" placeholder="Digite o dominio" />
+                    <input type="text" id="key_senha_3" class="input-card" placeholder="Digite o usuário" />
+                    <button id="gerar_senha" class="button-card">Gerar</button>
                     <div class="input-copy">
-                        <input type="text" id="cnpj_gerado" class="input-card" disabled></input>
+                        <input type="text" id="senha_gerada" class="input-card" disabled />
                         <button id="btn-copy"><img class="img-copy" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4OC4zIDQ4OC4zIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0ODguMyA0ODguMzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIxNnB4IiBoZWlnaHQ9IjE2cHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zMTQuMjUsODUuNGgtMjI3Yy0yMS4zLDAtMzguNiwxNy4zLTM4LjYsMzguNnYzMjUuN2MwLDIxLjMsMTcuMywzOC42LDM4LjYsMzguNmgyMjdjMjEuMywwLDM4LjYtMTcuMywzOC42LTM4LjZWMTI0ICAgIEMzNTIuNzUsMTAyLjcsMzM1LjQ1LDg1LjQsMzE0LjI1LDg1LjR6IE0zMjUuNzUsNDQ5LjZjMCw2LjQtNS4yLDExLjYtMTEuNiwxMS42aC0yMjdjLTYuNCwwLTExLjYtNS4yLTExLjYtMTEuNlYxMjQgICAgYzAtNi40LDUuMi0xMS42LDExLjYtMTEuNmgyMjdjNi40LDAsMTEuNiw1LjIsMTEuNiwxMS42VjQ0OS42eiIgZmlsbD0iI0ZGRkZGRiIvPgoJCTxwYXRoIGQ9Ik00MDEuMDUsMGgtMjI3Yy0yMS4zLDAtMzguNiwxNy4zLTM4LjYsMzguNmMwLDcuNSw2LDEzLjUsMTMuNSwxMy41czEzLjUtNiwxMy41LTEzLjVjMC02LjQsNS4yLTExLjYsMTEuNi0xMS42aDIyNyAgICBjNi40LDAsMTEuNiw1LjIsMTEuNiwxMS42djMyNS43YzAsNi40LTUuMiwxMS42LTExLjYsMTEuNmMtNy41LDAtMTMuNSw2LTEzLjUsMTMuNXM2LDEzLjUsMTMuNSwxMy41YzIxLjMsMCwzOC42LTE3LjMsMzguNi0zOC42ICAgIFYzOC42QzQzOS42NSwxNy4zLDQyMi4zNSwwLDQwMS4wNSwweiIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo="></button>
                     </div>
-                    
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <span class="titulo-card">Validador de CNPJ</span>
-                    <input type="text" id="cnpj_a_validar" class="input-card" placeholder="Digite o CNPJ..."></input>
-                    <button id="validar_cnpj" class="button-card">Validar</button>
-                    <input type="text" id="resposta_cnpj" class="input-card" disabled></input>
                 </div>
             </div>
         </section>
-        <script src="../js/cnpj.js"></script>
+        <script src="../js/senha.js"></script>
     </body>
 </html>

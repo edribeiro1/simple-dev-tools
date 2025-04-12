@@ -1,7 +1,7 @@
 body {
     display: flex;
     justify-content: center;
-    background-color: #eee;
+    background: radial-gradient(circle at bottom, #5a44d1 0%, #0e0b1b 80%);
     align-items: center;
     width: 100%;
     font-family: 'Roboto', sans-serif !important;
@@ -17,7 +17,7 @@ button {
     font-size: 2em;
     font-weight: 400;
     width: 100%;
-    background-color: #003e75;
+    background-color: #004985;
     color: white;
     margin-top: 20px;
     padding: 10px;
@@ -36,6 +36,7 @@ button {
     /* background-color: #3f3f3f; */
     align-items: center;
     width: 100%;
+    margin-top: 50px;
 }
 
 .feed-2 {
@@ -51,14 +52,13 @@ button {
 .card {
     display: flex;
     justify-content: center;
-    box-shadow: 0px 0px 5px 0px #2196F3;
-    background-color: #2196F3;
+    /* box-shadow: 0px 0px 5px 0px #325b91; */
+    background-color: #2a3b67;
     max-width: 500px;
     width: 100%;
     min-height: 10em;
     margin: 1em 0px;
     border-radius: 10px;
-    padding: 2em;
     color: white;
 }
 
@@ -67,6 +67,7 @@ button {
     object-fit: contain;
     border-radius: 10px;
     min-height: 18em;
+    margin: 2em;
 }
 
 iframe {
@@ -74,8 +75,8 @@ iframe {
 }
 
 .a_link {
-    background-color: #2196F3;
-    box-shadow: 0px 0px 5px 0px #2196F3;
+    background-color: #2a3b67;
+    /* box-shadow: 0px 0px 5px 0px #325b91; */
     border-radius: 4px;
     margin: 10px;
     padding: 20px;
@@ -111,7 +112,7 @@ legend {
     margin-top: 20px;
     padding: 10px;
     width: -webkit-fill-available;
-    font-size: 1.5em;
+    font-size: 1.3em;
     border-radius: 4px;
 }
 
@@ -121,17 +122,30 @@ legend {
     cursor: text;
 }
 
-.input-copy {
+.input-copy, .input-show {
     display: block;
     position: relative;
 }
 
-#btn-copy {
+#btn-show {
     position: absolute;
-    top: 29px;
+    top: 31px;
     right: 1px;
     border: 0;
     background: unset;
+}
+
+#btn-copy {
+    position: absolute;
+    top: 27px;
+    right: 1px;
+    border: 0;
+    background: unset;
+}
+
+.img-show {
+    height: 20px;
+    filter: drop-shadow(0px 0px 5px #242424);
 }
 
 .img-copy {
@@ -141,4 +155,10 @@ legend {
 
 .img-copy:hover {
     filter: invert(1) drop-shadow(0px 0px 5px #242424);
+}
+
+@media (max-width: 900px) {
+    .feed-2 {
+        flex-direction: column;
+    }
 }

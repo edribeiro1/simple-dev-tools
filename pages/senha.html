@@ -17,9 +17,16 @@
             <div class="card">
                 <div class="card-body">
                     <span class="titulo-card">Gerador de senha</span>
-                    <input type="text" id="key_senha_1" class="input-card" placeholder="Digite a chave" />
+                    <div class="input-show">
+                        <input type="password" id="key_senha_1" class="input-card" placeholder="Digite a chave" />
+                        <button id="btn-show"><img id="img_show_senha_1" class="img-show" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IB2cksfwAAAX9JREFUeNq9k0srhFEYx8/CzLm8886E3C8plGwUipRZSjasXEJhqax9ApeFvaLkGyhlIz4AYqOQsnAJkVkg2bj8nt6zmQVTs5in/p1znuf/fy7nPa8qpIXW2vm81caYNWPsck5iLBa0QV6FfA7ewDu4kjWZTJb8KXTOVRnjNiF+gRvaHRVfGIalnA8kqdZ2BWwRq8kSx+PxVhERPGa9TqVSxcob5G6JRVPYC3AE7knersS01s04HoiOs+4hGI78boDzLfgk8ZxPNuI5Y6KhcItic4h4hrjsM0EQVPj9HfgBrxRpFF8ikSgXjr/UaemGjTujnSEveoRU5gmnnL/pZBbOou+gTipHY7tB0SrEnSLUOuiHsI1wQggEF2R2zg0g7ZNOCYeO+og9oe1QPtCL44V1Ry4RUr3MLxeovDFapRSKithn1p6sL4Gjlqq7fu4M2MddRJVqEk+KWGLyGemg6b8Xl4b4QcIuyCf+IV2SfCOqmsMgL5FkXeVr/ocJVaHsFwAjUEYq7jKdAAAAAElFTkSuQmCC"></button>
+                    </div>
                     <input type="text" id="key_senha_2" class="input-card" placeholder="Digite o dominio" />
                     <input type="text" id="key_senha_3" class="input-card" placeholder="Digite o usuário" />
+                    <div class="range-input" style="display: flex; flex-direction: column;">
+                        <label for="tamanho_senha">Tamanho senha: <input class="input-card" type="text" id="valor_tamanho_senha" value=20 disabled style="width: 18px; padding: 5px; font-size: 1em; text-align: center;"/></label>
+                        <input type="range" id="tamanho_senha" name="tamanho_senha" min="6" max="34" value="20" step="1"/>
+                    </div>
                     <button id="gerar_senha" class="button-card">Gerar</button>
                     <div class="input-copy">
                         <input type="text" id="senha_gerada" class="input-card" disabled />

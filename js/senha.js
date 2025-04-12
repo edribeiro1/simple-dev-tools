@@ -1,3 +1,22 @@
+const tamanho_senha = document.getElementById('tamanho_senha');
+const valor_tamanho_senha = document.getElementById('valor_tamanho_senha');
+
+tamanho_senha.addEventListener('input', () => {
+    valor_tamanho_senha.value = tamanho_senha.value;
+});
+
+const input_senha = document.getElementById('key_senha_1');
+const btn_show = document.getElementById('btn-show');
+const img_show_senha_1 = document.getElementById('img_show_senha_1');
+
+btn_show.addEventListener('click', () => {
+  const is_password = input_senha.type === 'password';
+  input_senha.type = is_password ? 'text' : 'password';
+  const closed_eye = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IB2cksfwAAAX9JREFUeNq9k0srhFEYx8/CzLm8886E3C8plGwUipRZSjasXEJhqax9ApeFvaLkGyhlIz4AYqOQsnAJkVkg2bj8nt6zmQVTs5in/p1znuf/fy7nPa8qpIXW2vm81caYNWPsck5iLBa0QV6FfA7ewDu4kjWZTJb8KXTOVRnjNiF+gRvaHRVfGIalnA8kqdZ2BWwRq8kSx+PxVhERPGa9TqVSxcob5G6JRVPYC3AE7knersS01s04HoiOs+4hGI78boDzLfgk8ZxPNuI5Y6KhcItic4h4hrjsM0EQVPj9HfgBrxRpFF8ikSgXjr/UaemGjTujnSEveoRU5gmnnL/pZBbOou+gTipHY7tB0SrEnSLUOuiHsI1wQggEF2R2zg0g7ZNOCYeO+og9oe1QPtCL44V1Ry4RUr3MLxeovDFapRSKithn1p6sL4Gjlqq7fu4M2MddRJVqEk+KWGLyGemg6b8Xl4b4QcIuyCf+IV2SfCOqmsMgL5FkXeVr/ocJVaHsFwAjUEYq7jKdAAAAAElFTkSuQmCC";
+  const open_eye = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IB2cksfwAAAT1JREFUeNrdkk8rRVEUxU8G95x7rptkgIE/JTIwoPT8+QAGjF5MmSlmPoQxn0AGMjbDQL4GQ0mvUAihV1y/1d2DdxVlJrtWZ9211t77vHev+4cVY5wIIRyGkL6AD/AujnaEN/ltY5qm/QT3wFOJuOq9HwHD4mgFeAT7DBusNCdJ+xjGFcFdBfM87/q6QBreDZkdzkaWZd1mdXaU08My56n3ccFuNMtzUx58RhrevDIM2ZTO7YYc5IzmFQW0gck9xosWNKVpK/zWFmzAzxW84GHJmhoMGzD+1jpEmjxlxNk+B7/U1HG75iLnCWfdNkxZ8yu8ZlpdGfspBW+l15nRp6t5n27DH8xQZQYnTU1ktjiv9R+51tLrwjwA92UwridJMiodvob2DO6Ukf7T91CrfkiCeDjGm3a/qLYK/7P1CZJtTkc/4/kUAAAAAElFTkSuQmCC";
+  img_show_senha_1.src = is_password ? open_eye : closed_eye;
+});
+
 function md5(e) {
     function h(a, b) {
         var c, d, e, f, g;
@@ -71,10 +90,27 @@ document.getElementById('btn-copy').addEventListener('click', () => {
 
 document.getElementById('gerar_senha').addEventListener('click', () => {
     document.getElementById('senha_gerada').value = '';
-    key_senha_1 = document.getElementById('key_senha_1').value;
-    key_senha_2 = document.getElementById('key_senha_2').value;
-    key_senha_3 = document.getElementById('key_senha_2').value;
-    key = key_senha_1.toLowerCase().trim() + key_senha_2.toLowerCase().trim() + key_senha_3.toLowerCase().trim();
-    senha_gerada = md5(key) + 'E*';
+    const tamanho_senha = parseInt(document.getElementById('tamanho_senha').value);
+    const key_senha_1 = document.getElementById('key_senha_1').value;
+    const key_senha_2 = document.getElementById('key_senha_2').value;
+    const key_senha_3 = document.getElementById('key_senha_2').value;
+    const key = key_senha_1.toLowerCase().trim() + key_senha_2.toLowerCase().trim() + key_senha_3.toLowerCase().trim();
+    const encrypted_key = md5(key);
+    const last_numbers = getLastNumbersForKey(encrypted_key);
+    const add_letter = String.fromCharCode(65 + (parseInt(last_numbers) % 26));
+    const senha_gerada = encrypted_key.slice(0, tamanho_senha - 2) + add_letter + '*';
     document.getElementById('senha_gerada').value = senha_gerada;
 });
+
+function getLastNumbersForKey(key) {
+    let numbers = '';
+
+    for (let i = key.length - 1; i >= 0; i--) {
+        if (!isNaN(key[i]) && key[i] !== ' ') {
+            numbers = key[i] + numbers;
+        if (numbers.length === 2) break;
+        }
+    }
+
+    return numbers;
+}
